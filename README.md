@@ -24,3 +24,19 @@ You need to update the cookie preference page with the following, good luck!
 
 ![image](https://github.com/Greengate-Fintech/cookie-preference-app/assets/122828932/1677e82d-de99-4aee-ad8d-eb648a48150d)
 
+### Wording
+
+Essential
+These items are necessary for the website to work.
+
+
+Marketing
+These items help deliver advertising that’s more relevant to you. They may also be used to limit the number of times you see an ad and measure the effectiveness of ad campaigns. These are third party cookies provided by our advertising partners.
+
+
+Personalization
+These items let the website remember choices you make (like user name, language, or region) and personalize features for you. For example, we may show you different content depending on which of our sites you’ve visited and content you’ve read.
+
+
+Analytics
+These items help us understand visitor interactions, measure website performance, and spot potential technical issues. These don’t include essential cookies that provide incidental analytics while making the website work.
