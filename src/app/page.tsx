@@ -1,95 +1,117 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+
+import * as React from "react";
+import Stack from "@mui/material/Stack";
+import TrapFocus from "@mui/material/Unstable_TrapFocus";
+import CssBaseline from "@mui/material/CssBaseline";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Container from "@mui/material/Container";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Paper from "@mui/material/Paper";
+import Fade from "@mui/material/Fade";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 export default function Home() {
+  const [bannerOpen, setBannerOpen] = React.useState(true);
+
+  const closeBanner = () => {
+    setBannerOpen(false);
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <React.Fragment>
+      <CssBaseline />
+      <AppBar position="fixed" component="nav">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Container component="main" sx={{ pt: 3 }}>
+        <Toolbar />
+        <Typography paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
+          dolor purus non enim praesent elementum facilisis leo vel. Risus at
+          ultrices mi tempus imperdiet.
+        </Typography>
+        <Typography paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
+          dolor purus non enim praesent elementum facilisis leo vel. Risus at
+          ultrices mi tempus imperdiet.
+        </Typography>
+      </Container>
+      <TrapFocus open disableAutoFocus disableEnforceFocus>
+        <Fade appear={false} in={bannerOpen}>
+          <Paper
+            role="dialog"
+            aria-modal="false"
+            aria-label="Cookie banner"
+            square
+            variant="outlined"
+            tabIndex={-1}
+            sx={{
+              position: "fixed",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              m: 0,
+              p: 2,
+              borderWidth: 0,
+              borderTopWidth: 1,
+            }}
+          >
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              justifyContent="space-between"
+              gap={2}
+            >
+              <Box
+                sx={{
+                  flexShrink: 1,
+                  alignSelf: { xs: "flex-start", sm: "center" },
+                }}
+              >
+                <Typography fontWeight="bold">
+                  This website uses cookies
+                </Typography>
+                <Typography variant="body2">
+                  example.com relies on cookies to improve your experience.
+                </Typography>
+              </Box>
+              <Stack
+                gap={2}
+                direction={{
+                  xs: "row-reverse",
+                  sm: "row",
+                }}
+                sx={{
+                  flexShrink: 0,
+                  alignSelf: { xs: "flex-end", sm: "center" },
+                }}
+              >
+                <Button size="small" onClick={closeBanner} variant="contained">
+                  Allow all
+                </Button>
+                <Button size="small" onClick={closeBanner}>
+                  Reject all
+                </Button>
+              </Stack>
+            </Stack>
+          </Paper>
+        </Fade>
+      </TrapFocus>
+    </React.Fragment>
+  );
 }
